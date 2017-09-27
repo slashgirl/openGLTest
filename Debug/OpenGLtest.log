@@ -1,0 +1,13 @@
+﻿  shader.cpp
+  stb_image.c
+d:\opengl\opengltest\opengltest\stb_image.c(300): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: 参见“fopen”的声明
+d:\opengl\opengltest\opengltest\stb_image.c(362): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: 参见“fopen”的声明
+d:\opengl\opengltest\opengltest\stb_image.c(400): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: 参见“fopen”的声明
+d:\opengl\opengltest\opengltest\stb_image.c(4293): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: 参见“fopen”的声明
+    正在创建库 D:\openGl\OpenGLtest\Debug\OpenGLtest.lib 和对象 D:\openGl\OpenGLtest\Debug\OpenGLtest.exp
+  OpenGLtest.vcxproj -> D:\openGl\OpenGLtest\Debug\OpenGLtest.exe
+  OpenGLtest.vcxproj -> D:\openGl\OpenGLtest\Debug\OpenGLtest.pdb (Full PDB)
