@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 
+
 static GLuint CreateShader(const std::string& text, GLenum shaderType);
 static void CheckShaderError(GLuint shader, GLuint flag, bool isProgram, const std::string& errorMessage);	
 //检测着色器是否存在错误，并且输出错误信息
@@ -22,6 +23,12 @@ Shader::Shader(const std::string& fileName)
 		glAttachShader(m_program, m_shaders[i]);
 	}
 
+	//绑定位置、纹理、法线属性信息
+	glBindAttribLocation(m_program, 0, "position");
+	glBindAttribLocation(m_program, 1, "texCoord");
+	glBindAttribLocation(m_program, 2, "normal");
+
+
 	//导入shader到program中后，连接到program,并检查错误信息
 	glLinkProgram(m_program);
 	CheckShaderError(m_program, GL_LINK_STATUS, true, "Error:Program Linking invalid");
@@ -29,11 +36,20 @@ Shader::Shader(const std::string& fileName)
 	//连接到program后，验证program
 	glValidateProgram(m_program);
 	CheckShaderError(m_program, GL_VALIDATE_STATUS, true, "Error:Program Validate invalid");
+
+	m_uniforms[TRANSFORM_U] =glGetUniformLocation(m_program, "transform");
 }
 
 void Shader::Bind()
 {
-	glUseProgram(m_program);
+	glUseProgram(m_program);		//使用program
+}
+
+//变换矩阵传递给着色器
+void Shader::Update(const Transform &transform, const Camera& camera)
+{
+	glm::mat4 model =camera.GetViewProjection() * transform.GetModel();		//将相机位置矩阵与转换矩阵相乘，传递到着色器中
+	glUniformMatrix4fv(m_uniforms[TRANSFORM_U], 1, GL_FALSE, &model[0][0]);
 }
 
 Shader::~Shader()
@@ -47,10 +63,12 @@ Shader::~Shader()
 	glDeleteProgram(m_program);		//删除掉创建的program
 }
 
+//返回一个shader,第一个参数加载的着色器的所有字符串，第二个参数加载的着色器的类型
 static GLuint CreateShader(const std::string& text, GLenum shaderType)
 {
+	//首先创建一个shader
 	GLuint shader = glCreateShader(shaderType);
-
+	//如果创建失败，则输出提示信息
 	if(shader == 0)
 	{
 		std::cerr << "Error shader creation failure" << std::endl;

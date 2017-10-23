@@ -94,7 +94,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>.\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;OpenGL32.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -145,19 +145,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="ObjLoader\obj_loader.cpp" />
     <ClCompile Include="shader.cpp" />
-    <ClCompile Include="stb_image.c" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Display.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="ObjLoader\obj_loader.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Shader.h" />
-    <ClInclude Include="stb_image.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Transform.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OpenGLtest.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Logo01.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\basicShader.fs" />
+    <None Include="res\basicShader.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
