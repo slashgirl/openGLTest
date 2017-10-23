@@ -34,6 +34,9 @@
     <ClCompile Include="ObjLoader\obj_loader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Display.h">
@@ -58,6 +61,9 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Test.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="OpenGLtest.rc" />
