@@ -1,3 +1,4 @@
-﻿    正在创建库 D:\openGl\OpenGLtest\Debug\OpenGLtest.lib 和对象 D:\openGl\OpenGLtest\Debug\OpenGLtest.exp
+﻿  main.cpp
+d:\opengl\opengltest\opengltest\camera.h(19): warning C4244: “初始化”: 从“glm::vec<3,float,0>::length_type”转换到“float”，可能丢失数据
   OpenGLtest.vcxproj -> D:\openGl\OpenGLtest\Debug\OpenGLtest.exe
   OpenGLtest.vcxproj -> D:\openGl\OpenGLtest\Debug\OpenGLtest.pdb (Full PDB)

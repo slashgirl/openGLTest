@@ -63,16 +63,16 @@
     <ResourceCompile Include="OpenGLtest.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\Logo01.dds">
-      <Filter>res</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="res\basicShader.fs">
       <Filter>res</Filter>
     </None>
     <None Include="res\basicShader.vs">
       <Filter>res</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bricks.jpg">
+      <Filter>res</Filter>
+    </Image>
   </ItemGroup>
 </Project>

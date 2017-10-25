@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
 	Shader shader("./res/basicShader");		//创建一个shader对象,在shader之后添加纹理
 
-	//Texture texture("./res/Logo01.dds");	//dds纹理的加载路径
+	Texture texture("./res/bricks.jpg");	//dds纹理的加载路径
 
 	Camera camera(mesh2.GetAABB3(), 70.0f, (float)WIDTH/(float)HEIGHT, 0.01f, 1000.0f);
 

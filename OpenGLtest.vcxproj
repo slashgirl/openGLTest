@@ -168,11 +168,11 @@
     <ResourceCompile Include="OpenGLtest.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\Logo01.dds" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="res\basicShader.fs" />
     <None Include="res\basicShader.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bricks.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
