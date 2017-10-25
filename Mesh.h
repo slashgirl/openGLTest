@@ -29,15 +29,34 @@ private:
 	glm::vec3 normal;		//法线向量
 };
 
+//包围盒
+class AABB3
+{
+public:
+	//定义最小点和最大点
+	glm::vec3 minPos;
+	glm::vec3 maxPos;
+
+	AABB3();
+
+	void empty();
+	void add(const glm::vec3 &p);
+
+	~AABB3();
+};
+
 class Mesh
 {
 public:
 	//传参顶点数组和顶点个数（复杂的模型由于顶点数量过大，不能通过顶点来进行传递，通过索引获得每个顶点的组成信息,定义索引的指针和数量）
-	Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices);	
+	Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices); //内存中的数据	
 
-	Mesh(const std::string& filename);	
+	Mesh(const std::string& filename);	//磁盘上的文件
 
 	void Draw();
+
+	AABB3 GetAABB3();
+
 	~Mesh();
 
 private:
@@ -53,7 +72,11 @@ private:
 	GLuint m_vertexArrayObject;		//顶点数组信息
 	GLuint m_vertexArrayBuffers[NUM_BUFFERS];		//定义顶点缓存
 	unsigned int m_drawCount;		//要绘制的顶点个数
+	AABB3 m_bbBV; //包围盒
 };
+
+
+
 
 
 

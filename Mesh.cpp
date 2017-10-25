@@ -1,5 +1,33 @@
 #include "Mesh.h"
 #include <vector>
+#include "glm/glm.hpp"
+
+AABB3::AABB3()
+{
+
+}
+
+void AABB3::empty()
+{
+	const float kBigNumber = 1e37f;
+	minPos.x = minPos.y = minPos.z = kBigNumber;
+	maxPos.x = maxPos.y = maxPos.z = -kBigNumber;
+}
+
+void AABB3::add(const glm::vec3 &p)
+{
+	if(p.x < minPos.x) minPos.x = p.x;
+	if(p.x > maxPos.x) maxPos.x = p.x;
+	if(p.y < minPos.y) minPos.y = p.y;
+	if(p.y > maxPos.y) maxPos.y = p.y;
+	if(p.z < minPos.z) minPos.z = p.z;
+	if(p.z > maxPos.z) maxPos.z = p.z;
+}
+
+AABB3::~AABB3()
+{
+
+}
 
 
 Mesh::Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices)
@@ -32,6 +60,14 @@ Mesh::Mesh(const std::string& filename)
 void Mesh::InitMesh(const IndexedModel& model)
 {
 	m_drawCount = model.indices.size();
+
+	m_bbBV.empty();
+	int m_vertexNumber = model.positions.size();
+	
+	for(int i =0; i < m_vertexNumber; i++)
+	{
+		m_bbBV.add(model.positions[i]);
+	}
 
 	glGenVertexArrays(1, &m_vertexArrayObject);		//分配顶点数组对象
 	glBindVertexArray(m_vertexArrayObject);		//创建并绑定一个顶点数组对象
@@ -79,4 +115,9 @@ void Mesh::Draw()
 	glDrawElements(GL_TRIANGLES, m_drawCount, GL_UNSIGNED_INT, 0);
 
 	glBindVertexArray(0);		//对绑定做一个释放
+}
+
+AABB3 Mesh::GetAABB3()
+{
+	return m_bbBV;
 }

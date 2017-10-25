@@ -22,9 +22,6 @@
     <ClCompile Include="shader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Transform.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -34,7 +31,7 @@
     <ClCompile Include="ObjLoader\obj_loader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Test.cpp">
+    <ClCompile Include="Texture.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -48,9 +45,6 @@
     <ClInclude Include="Shader.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="Transform.h">
       <Filter>源文件</Filter>
     </ClInclude>
@@ -61,7 +55,7 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Test.h">
+    <ClInclude Include="Texture.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
