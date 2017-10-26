@@ -34,7 +34,7 @@ Display::~Display()
 	SDL_Quit();
 }
 
-void Display::Update()
+void Display::Update(Camera &curCamera, const AABB3 &bbModel)
 {
 	SDL_GL_SwapWindow(m_window);	//添加窗口
 
@@ -42,8 +42,33 @@ void Display::Update()
 
 	while(SDL_PollEvent(&e))
 	{
-		if(e.type == SDL_QUIT){		//关闭SDL窗口的时候
+		if(e.type == SDL_QUIT) //关闭SDL窗口的时候
+		{		
 			m_isClosed = true;
+		}else if(e.type == SDL_MOUSEMOTION)
+		{
+
+		}else if(e.type == SDL_MOUSEBUTTONDOWN)
+		{
+
+		}else if(e.type == SDL_MOUSEBUTTONUP)
+		{
+
+		}else if(e.type == SDL_MOUSEWHEEL)
+		{
+			glm::vec3 curPos; glm::vec3 curFoword; glm::vec3 curUp;
+			curCamera.GetCameraLocation(curPos, curFoword, curUp);
+			glm::vec3 vModelCenter =(bbModel.minPos+bbModel.maxPos)/2.0f;
+			float fDist =glm::length(curPos-vModelCenter); float fWalkLen =fDist*0.05f;
+			glm::vec3 vDir =glm::normalize(vModelCenter-curPos);
+			if(e.wheel.y == 1)
+			{
+				curPos +=vDir*fWalkLen;
+			}else if(e.wheel.y == -1)
+			{
+				curPos -=vDir*fWalkLen;
+			}
+			curCamera.SetCameraLocation(curPos, curFoword, curUp);
 		}
 	}
 }

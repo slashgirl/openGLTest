@@ -55,7 +55,7 @@ public:
 
 	void Draw();
 
-	AABB3 GetAABB3();
+	AABB3 GetAABB3(); //返回包围盒信息
 
 	~Mesh();
 

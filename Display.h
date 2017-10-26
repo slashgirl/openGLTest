@@ -6,13 +6,14 @@
 #include <string>
 #include "sdl2/SDL.h"
 #include "GL/glew.h"
+#include "Camera.h"
 
 class Display
 {
 public:
 	Display(int width, int height, const std::string& title);
 
-	void Update();
+	void Update(Camera &curCamera, const AABB3 &bbModel);
 	bool IsClosed();
 	void Clear(float r, float g, float b, float a);
 
