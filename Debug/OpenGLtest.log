@@ -1,13 +1,4 @@
-﻿  Transform.cpp
-  Texture.cpp
-  shader.cpp
-  obj_loader.cpp
-d:\opengl\opengltest\opengltest\objloader\obj_loader.cpp(381): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
-  Mesh.cpp
-  main.cpp
-  Display.cpp
-  Camera.cpp
-  正在生成代码...
+﻿  Display.cpp
     正在创建库 D:\openGl\OpenGLtest\Debug\OpenGLtest.lib 和对象 D:\openGl\OpenGLtest\Debug\OpenGLtest.exp
   OpenGLtest.vcxproj -> D:\openGl\OpenGLtest\Debug\OpenGLtest.exe
   OpenGLtest.vcxproj -> D:\openGl\OpenGLtest\Debug\OpenGLtest.pdb (Full PDB)

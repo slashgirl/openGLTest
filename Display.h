@@ -23,6 +23,11 @@ private:
 	SDL_Window* m_window;
 	SDL_GLContext m_glContext;
 	bool m_isClosed;
+	bool m_bLeftButtonDown;
+	bool m_bMidButtonDown;
+	bool m_bRightButtonDown;
+	Sint32 m_sPreMousePosX;
+	Sint32 m_sPreMousePosY;
 };
 
 

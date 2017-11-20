@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
 	Texture texture("./res/bricks.jpg");	//dds纹理的加载路径
 
-	Camera camera(mesh2.GetAABB3(), 70.0f, (float)WIDTH/(float)HEIGHT, 0.01f, 1000.0f);	//根据模型包围盒位置确定相机位置，参数传递为包围盒
+	Camera camera(mesh2.GetAABB3(), 70.0f, (float)WIDTH/(float)HEIGHT, 1.0f, 1000.0f);	//根据模型包围盒位置确定相机位置，参数传递为包围盒
 
 	Transform transform;
 
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 		display.Clear(0.0f, 0.15f, 0.3f, 1.0f);
 
 		//transform.GetPos() ->x =sinCounter;
-		transform.GetRot() ->x =counter * 0.5f;
+		//transform.GetRot() ->x =counter * 0.5f;
 		//transform.GetRot() ->z =counter*0.5;
 		//transform.SetScale(glm::vec3(1.0f, 1.0f, 1.0f));
 		shader.Bind();
